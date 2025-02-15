@@ -1,3 +1,14 @@
+# This Terraform code creates the following resources:
+# - S3 bucket with randomized name
+# - DynamoDB table
+# - Register S3 bucket in Lake Formation
+# - A Glue Database
+# - A Glue Crawler (+ a trigger every morning)
+# - IAM Role & policies attached to Glue Crawler to allow S3 scan
+# - A mockup Lambda function
+# - IAM Role & policies attached to Lambda function to extract data from DynamoDB and save it in S3
+# - An EventBridge event to schedule the Lambda function
+
 # Get AWS Account ID
 data "aws_caller_identity" "current" {}
 
